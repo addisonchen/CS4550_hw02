@@ -1,0 +1,150 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+table, th, td {
+    border: 1px solid cadetblue;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+.MainContainer {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.Link {
+    margin: 10px;
+    padding: 10px;
+    width: 225px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+
+    background-color: lightblue;
+    transition: 0.3s;
+}
+
+.Link:hover {
+    transform: scale(1.1);
+    background-color: lightskyblue;
+
+}
+
+.Link.Red {
+    margin-top: 70px;
+    background-color: lightcoral;
+}
+
+.Link.Red:hover {
+    transform: scale(1.1);
+    background-color: rgb(236, 100, 100);
+}
+
+.MonkeyPic {
+    margin: 20px;
+    width: 640px;
+}
+
+
+.MonkeyName {
+    margin: 10px;
+}
+
+.NumTable {
+    width: 300px;
+    margin: 10px;
+}
+
+
+
+#a {
+    margin-right: -6px;
+    color: lightsalmon;
+}
+
+#b {
+    margin-right: -6px;
+    color: darkcyan;
+}
+
+#c {
+    margin-right: -6px;
+    color: plum;
+}
+
+#d {
+    margin-right: -6px;
+    color: darkgoldenrod;
+}
+
+#e {
+    margin-right: -6px;
+    color: darkslateblue;
+}
+
+#f {
+    margin-right: -6px;
+    color: darkolivegreen;
+}
+
+#g {
+    margin-right: -6px;
+    color: pink;
+}
+
+#h {
+    margin-right: -6px;
+    color: blue;
+}
+
+#i {
+    color: red;
+}
+
+#j {
+    margin-right: -6px;
+    color: darkorchid;
+}
+
+#k {
+    margin-right: -6px;
+    color: darkgreen;
+}
+
+#l {
+    margin-right: -6px;
+    color: darkkhaki;
+}
+
+#m {
+    margin-right: -6px;
+    color: darkred;
+}
+
+#n {
+    margin-right: -6px;
+    color: cadetblue;
+}
+
+#o {
+    color: darkorange;
+}
+
+
+
+
+
+
+
+
+
