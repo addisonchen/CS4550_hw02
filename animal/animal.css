@@ -18,7 +18,7 @@ th, td {
     margin: 30px;
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 
@@ -51,7 +51,7 @@ th, td {
 }
 
 .MonkeyPic {
-    margin: 20px;
+    margin: 10px;
     width: 640px;
 }
 
