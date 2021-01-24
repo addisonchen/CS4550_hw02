@@ -22,7 +22,8 @@
         }
 
         let firstNum = Number(state.first);
-        let secondNum = Number(state.second);
+        // reuse the first num if no second num (so user can do -= += *= /= with one num)
+        let secondNum = state.second !== null ? Number(state.second) : firstNum;
         let ansNum = 0;
 
         switch(state.oper) {
@@ -40,7 +41,7 @@
                 if (secondNum === 0) {
                     console.log("divide by zero!");
                 } else {
-                    ansNum = Number(Math.round((firstNum / secondNum) + "e+" + (maxLen-2)) + "e-" + (maxLen-2));
+                    ansNum = firstNum / secondNum;
                 }
                 break;
             default:
@@ -48,6 +49,20 @@
         }
 
         let ans = '' + ansNum;
+
+        // round down to the correct length if necessary
+        if (ans.includes('.')) {
+            let parts = ans.split('.');
+            let preDecimalLen = parts[0].length;
+
+            // < maxLen - 1 to make space for a . and at least one following digit.
+            if (preDecimalLen < maxLen - 1) {
+                let postDecimal = +(Math.round(Number("." + parts[1]) + ("e+" + (maxLen - preDecimalLen - 1))) + ("e-" + (maxLen - preDecimalLen - 1)));
+                ans = (Number(parts[0]) + postDecimal).toString();
+            }
+            // if the first part is too long then it will overflow regardless
+            // so just let the code run until it hits the overflow handler below
+        }
         
         // set new state of calculator
         state.first = null;
@@ -164,7 +179,7 @@
     // called when a button is clicked by event listener
     // determine what kind of button was clicked and go from there
     function button_clicked(e) {
-        //console.log(e.currentTarget.value);
+        console.log(e.currentTarget.value);
         let val = e.currentTarget.value;
 
         if ((val === 'add') || (val === 'sub') || (val === 'mul') || (val === 'div')) {
@@ -188,7 +203,7 @@
             handleNumber(val);
         }
 
-        //console.log(state);
+        console.log(state);
     }
 
     // setup all the buttons with event listeners

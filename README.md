@@ -10,4 +10,5 @@
     - i.e.: user types "1 + 3 = ", then types "- 2 = " the display will show 2 (1 + 3 - 2 = 2)
  - User can change operation until they press = 
     - i.e.: user press "+" then types the second number then hits "-" before "=", will do subtraction
+ - User can hit a operator and equals without a second number and calculator will use the first input twice (num += itself, num *= itself)
     
