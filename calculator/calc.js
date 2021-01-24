@@ -41,7 +41,6 @@
                     console.log("divide by zero!");
                 } else {
                     ansNum = Number(Math.round((firstNum / secondNum) + "e+" + (maxLen-2)) + "e-" + (maxLen-2));
-                    console.log(ansNum);
                 }
                 break;
             default:
@@ -56,7 +55,6 @@
         state.oper = null;
 
         // check for overflow
-        console.log("return len: " + ans.length)
         if (ans.length > maxLen) {
             display.innerHTML = "overflow";
             state.prevAnswer = "0"
@@ -166,7 +164,7 @@
     // called when a button is clicked by event listener
     // determine what kind of button was clicked and go from there
     function button_clicked(e) {
-        console.log(e.currentTarget.value);
+        //console.log(e.currentTarget.value);
         let val = e.currentTarget.value;
 
         if ((val === 'add') || (val === 'sub') || (val === 'mul') || (val === 'div')) {
@@ -190,7 +188,7 @@
             handleNumber(val);
         }
 
-        console.log(state);
+        //console.log(state);
     }
 
     // setup all the buttons with event listeners
