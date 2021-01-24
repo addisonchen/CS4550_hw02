@@ -2,34 +2,32 @@ Please fill in answers to the questions below:
 
 
 1. What's your name?
-
+Addison Chen
 
 2. What hostname did you deploy to?
-
+hw02.swoogity.com
 
 3. What's the link to your repository on github with your code?
-
+https://github.com/addisonchen/CS4550_hw02
 
 4. How many HTML / CSS tutorial exercises did you do?
-
+2 of each
 
 5. How comfortable do you feel with HTML and CSS now?
-
+a 5 or 6 out of 10
 
 6. How many JS tutorial exercises did you do?
-
+2
 
 7. How comfortable do you feel with JS now?
-
+a 3 or 4 out of 10
 
 8. Do all of your HTML pages pass the W3C HTML validator?
 (https://validator.w3.org/)
-
+Yes!
 
 9. Which parts of this assignment did you have trouble with, if any?
-
-
-
+handling the nuances of the calculator logic (state, decimals, etc)
 
 
 And here's a list of tasks for grading comments. Just leave this here:
