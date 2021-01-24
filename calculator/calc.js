@@ -9,7 +9,9 @@
     //    - the prevAnswer will be ignored if a num/. is pressed before an operator is pressed after completing an exp.
     let state = {first: null, second: null, oper: null, prevAnswer: null};
 
+    // display is used in several functions, save time?
     let display = document.getElementById('display');
+    // set overflow length (so nums fit into display div)
     let maxLen = 15;
 
     // equal was pressed, do maths and reset state, store as prevAnswer
@@ -38,7 +40,8 @@
                 if (secondNum === 0) {
                     console.log("divide by zero!");
                 } else {
-                    ansNum = firstNum / secondNum
+                    ansNum = Number(Math.round((firstNum / secondNum) + "e+" + (maxLen-2)) + "e-" + (maxLen-2));
+                    console.log(ansNum);
                 }
                 break;
             default:
@@ -54,7 +57,7 @@
 
         // check for overflow
         console.log("return len: " + ans.length)
-        if (ans.length > 15) {
+        if (ans.length > maxLen) {
             display.innerHTML = "overflow";
             state.prevAnswer = "0"
         } else {
@@ -88,7 +91,7 @@
             return;
         }
 
-
+        // check if there is already a decimal
         if (!(curNum.includes('.'))) {
             display.innerHTML = curNum.concat('.');
 
