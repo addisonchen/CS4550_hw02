@@ -10,7 +10,7 @@
     let state = {first: null, second: null, oper: null, prevAnswer: null};
 
     let display = document.getElementById('display');
-
+    let maxLen = 15;
 
     // equal was pressed, do maths and reset state, store as prevAnswer
     function calculate() {
@@ -53,6 +53,7 @@
         state.oper = null;
 
         // check for overflow
+        console.log("return len: " + ans.length)
         if (ans.length > 15) {
             display.innerHTML = "overflow";
             state.prevAnswer = "0"
@@ -83,7 +84,7 @@
         }
 
         // do nothing on overflow
-        if (curNum.length >= 15) {
+        if (curNum.length >= maxLen) {
             return;
         }
 
@@ -123,14 +124,13 @@
             curNum = display.innerHTML;
         }
 
-        // do nothing on overflow
-        if (curNum.length >= 15) {
-            return;
-        }
-
-
         // first num
         if (state.oper === null) {
+            // do nothing on overflow
+            if (curNum.length >= maxLen) {
+                return;
+            }
+
             // new first num
             if (curNum === '0') {
                 display.innerHTML = val;
@@ -150,6 +150,10 @@
         }
         // second num exists already
         else {
+            // do nothing on overflow
+            if (curNum.length >= maxLen) {
+                return;
+            }
             let newNum = curNum.concat(val);
             display.innerHTML = newNum;
             state.second = newNum;
